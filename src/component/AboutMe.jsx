@@ -30,12 +30,20 @@ const AboutMe = () => {
             <div className="pt-6">
               <h3 className="text-lg font-semibold mb-4">Get in Touch</h3>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a id="contact" href="#" className="cosmic-button  rounded-full px-6 py-2 bg-primary hover:bg-primary/10 transition-colors duration-200">
-                  Get In Touch
-                </a>
+                <button
+  onClick={() => {
+    const contact = document.getElementById("contact");
+    if (contact) {
+      contact.scrollIntoView({ behavior: "smooth" });
+    }
+  }}
+  className="cosmic-button rounded-full px-6 py-2 bg-primary bg-primary-hover transition-colors duration-200"
+>
+  Get In Touch
+</button>
                 <a
-                  href="https://drive.google.com/file/d/1vtFoJedzkPhRgQ0rSDP7qBLsoSiR1Tlg/view?usp=sharing"
-                  className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-200"
+                  href="https://1drv.ms/b/c/4b83bb33d9e6a435/EfdPaY6d9DNNqVvgwFWOXzEBC9qSE_9qOoem90fvtXJp5Q?e=sqTJ1U"
+                  className="px-6 py-2 rounded-full border border-primary text-primary btn-custom-hover transition-colors duration-200"
                 >
                   Download CV
                 </a>

@@ -22,7 +22,7 @@ const HeroSection = () => {
             Hi, I'm{" "}
             <span className="text-primary">Yeasin</span>{" "}
             <span className="text-secondary">Arafat Nayem</span>{" "}
-            <span className="text-gradient">Bhuiyan</span>
+            <span className="text-primary">Bhuiyan</span>
           </h1>
 
           {/* Paragraph */}

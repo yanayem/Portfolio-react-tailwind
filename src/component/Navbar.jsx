@@ -29,14 +29,14 @@ const Navbar = () => {
       aria-label="Primary"
       className={cn(
         "fixed w-full z-40 transition duration-300 pr-9",
-        isScrolled ? "bg-NAV shadow-md text-dark" : "bg-transparent"
+        isScrolled ? " bg-light-nav bg-NAV shadow-md text-dark" : "bg-transparent"
       )}
     >
       <div className="flex items-center justify-between px-6 py-4">
         {/* Brand */}
         <a href="#hero" className="text-xl font-bold text-primary">
           <span className="relative left-2">
-            <span className="text-glow text-foreground">Nayem</span> Portfolio
+            <span className="text-glow text-foreground text-secondary">Nayem</span> Portfolio
           </span>
         </a>
 
@@ -46,7 +46,7 @@ const Navbar = () => {
             <a
               key={name}
               href={href}
-              className="transition-colors duration-300 text-foreground hover:text-primary"
+              className="transition-colors duration-300 text-foreground text-custom"
             >
               {name}
             </a>
