@@ -1,12 +1,33 @@
-# React + Vite
+# 👨‍💻 Yeasin Arafat Nayem Bhuiyan's Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio! I'm Yeasin Arafat Nayem Bhuiyan, a passionate Frontend Developer specializing in creating modern, responsive, and visually appealing web applications using React.js, Tailwind CSS, and Vite.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** [https://yanayem.netlify.app/](https://yanayem.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend:** React.js, Vite, Tailwind CSS
+- **Icons:** Lucide React
+- **Deployment:** Netlify
+- **Version Control:** Git & GitHub
+
+---
+
+## 📱 Connect with Me
+
+Stay connected through my social profiles:
+
+
+- **Email:** [arafatnayem01@gmail.com](mailto:arafatnayem01@gmail.com)
+- [LinkedIn](https://www.linkedin.com/in/yeasin-arafat-nayem-bhuiyan/)
+- [Twitter](#)
+- [Instagram](https://www.instagram.com/itsblackbang/)
+- [GitHub](https://github.com/yanayem)
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
