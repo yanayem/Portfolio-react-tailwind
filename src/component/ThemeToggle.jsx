@@ -1,38 +1,35 @@
 import { Moon, Sun } from "lucide-react";
 import React, { useState, useEffect } from "react";
 
+// Run once, before component renders, to prevent flash
+if (
+  localStorage.getItem("theme") === "dark" ||
+  (!localStorage.getItem("theme") &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches)
+) {
+  document.documentElement.classList.add("dark");
+} else {
+  document.documentElement.classList.remove("dark");
+}
+
 const ThemeToggle = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(
+    document.documentElement.classList.contains("dark")
+  );
 
-  // Load theme from localStorage on mount
+  // Keep in sync with localStorage
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      document.documentElement.classList.add("dark");
-      setIsDarkMode(true);
-    } else {
-      document.documentElement.classList.remove("dark");
-      setIsDarkMode(false);
-    }
-  }, []);
-
-  const toggleTheme = () => {
-    if (isDarkMode) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setIsDarkMode(false);
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setIsDarkMode(true);
-    }
-  };
+    localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+    document.documentElement.classList.toggle("dark", isDarkMode);
+  }, [isDarkMode]);
 
   return (
-    <button onClick={toggleTheme}
-    className="fixed z-50 p-2 top-3 right-4">
+    <button
+      onClick={() => setIsDarkMode(!isDarkMode)}
+      className="fixed z-50 p-2 top-3 right-4"
+    >
       {isDarkMode ? (
-        <Sun className="h-6 text-yellow-300 " />
+        <Sun className="h-6 text-yellow-300" />
       ) : (
         <Moon className="h-6 text-yellow-300" />
       )}

@@ -41,6 +41,9 @@
     --bg-NAV: 210, 30%, 98%;
     --color-nav: 180, 43.5%, 16.7%;
     --btn-color: 205, 80%, 81%;
+    --card-foreground2: 210, 20%, 97%;
+    --card-sm-foreground: 210, 70%, 98%;
+    --color-raw: 0, 0%, 0%;
   }
 
   /* ---------- Dark Mode Variables ---------- */
@@ -54,6 +57,9 @@
     --bg-NAV: 224, 55%, 6%;
     --color-nav: 180, 38%, 90%;
     --btn-color: 205, 80%, 50%;
+    --card-foreground2: 213, 50%, 7%;
+    --card-sm-foreground: 213, 90%, 7%;
+    --color-raw: 0, 0%, 100%;
 
     /* Derived HSL colors */
     --color-border: hsl(var(--border));
@@ -232,6 +238,12 @@ Navbar Hover Effect
   color: hsl(var(--color-nav));
 }
 
+.bg_custom_card {
+  background-color: hsl(var(--card-foreground2));
+}
+.bg_custom_sm_card {
+  background-color: hsl(var(--card-sm-foreground));
+}
  /* =========
 Text Colors
 =========*/
@@ -245,6 +257,14 @@ Text Colors
   background: linear-gradient(90deg, #f97316, #eab308);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.text-raw_custom {
+  color: hsl(var(--color-raw));
+  opacity: 0.8;
+}
+.des-raw_custom {
+  color: hsl(var(--color-raw));
+  opacity: 0.6;
 }
 /* =========
 Background Colors

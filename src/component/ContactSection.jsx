@@ -44,50 +44,120 @@ const ContactSection = () => {
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/yeasin-arafat-nayem-bhuiyan/",
       icon: <Linkedin size={24} />,
+      hoverColor: "hover:text-[#0A66C2]", // LinkedIn blue
     },
     {
       name: "Twitter",
       url: "#",
       icon: <Twitter size={24} />,
+      hoverColor: "hover:text-[#1DA1F2]", // Twitter blue
     },
     {
       name: "Instagram",
       url: "https://www.instagram.com/itsblackbang/",
       icon: <Instagram size={24} />,
+      hoverColor: "hover:text-[#E4405F]", // Instagram pink
     },
     {
       name: "Github",
       url: "https://github.com/yanayem",
       icon: <Github size={24} />,
+      hoverColor: "hover:text-[#333]", // GitHub dark gray
     },
   ];
 
   return (
-    <section id="contact" className="relative py-24 px-8 bg-black/50 md:bg-black/70">
-      {/* Dark overlay full backward */}
-     {/*<div className="absolute inset-0 bg-black/50 md:bg-black/70 pointer-events-none"></div>*/}
-      <div className="container relative z-10 mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-white">
+    <section id="contact" className="relative px-8 py-24">
+      <div className="container relative z-10 max-w-5xl mx-auto">
+        <h2 className="mb-12 text-3xl font-bold text-center md:text-4xl">
           Get In <span className="text-primary">Touch</span>
         </h2>
-        <p className="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
+        <p className="max-w-2xl mx-auto mb-12 text-center des-raw_custom">
           I'm a frontend developer specializing in modern web interfaces using
           React.js, Tailwind CSS, and Vite. I focus on building responsive,
           visually engaging, and high-performance user experiences.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Contact Form first on mobile */}
-          <div className="order-1 md:order-none relative z-20">
-            <div className="bg-card bg-opacity-100 p-6 sm:p-8 rounded-lg shadow-2xl w-full max-w-md mx-auto">
-              <h3 className="text-2xl font-semibold mb-6 text-center md:text-left">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
+          {/* Contact Information */}
+          <div className="relative z-20 flex flex-col items-center max-w-md px-4 mx-auto space-y-8 md:items-start">
+            <h3 className="mb-6 text-2xl font-semibold text-center text-raw_custom md:text-left">
+              Contact Information
+            </h3>
+            <div className="w-full space-y-6 des-raw_custom">
+              <div className="flex items-start space-x-4">
+                <div className="p-3 rounded-full bg-primary/10">
+                  <Mail className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-medium">Email</h4>
+                  <a
+                    href="mailto:arafatnayem01@gmail.com"
+                    className="transition-colors hover:text-primary"
+                  >
+                    arafatnayem01@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="p-3 rounded-full bg-primary/10">
+                  <Phone className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-medium">Phone</h4>
+                  <a
+                    href="tel:+8801516540037"
+                    className="transition-colors hover:text-primary"
+                  >
+                    +8801516540037
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="p-3 rounded-full bg-primary/10">
+                  <MapPin className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-medium">Location</h4>
+                  <p className="">Dhaka, Bangladesh</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-full pt-8 text-center md:text-left">
+              <h3 className="mb-4 text-lg font-medium des-raw_custom">
+                Connect With Me
+              </h3>
+              <div className="flex justify-center space-x-6 md:justify-start">
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit my ${link.name} profile`}
+                    className={`transition-colors duration-200 des-raw_custom ${link.hoverColor}`}
+                  >
+                    {link.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Contact Form */}
+          <div className="relative z-20 order-2 md:order-none">
+            <div className="w-full max-w-md p-6 mx-auto bg-opacity-100 rounded-lg shadow-2xl bg-card sm:p-8">
+              <h3 className="mb-6 text-2xl font-semibold text-center md:text-left">
                 Send a Message
               </h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium mb-2"
+                    className="block mb-2 text-sm font-medium"
                   >
                     Your Name
                   </label>
@@ -99,14 +169,14 @@ const ContactSection = () => {
                     onChange={handleChange}
                     required
                     placeholder="Your Name"
-                    className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="w-full px-4 py-3 border rounded-md border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
 
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium mb-2"
+                    className="block mb-2 text-sm font-medium"
                   >
                     Your Email
                   </label>
@@ -118,14 +188,14 @@ const ContactSection = () => {
                     onChange={handleChange}
                     required
                     placeholder="mail@mail.com"
-                    className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="w-full px-4 py-3 border rounded-md border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
 
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium mb-2"
+                    className="block mb-2 text-sm font-medium"
                   >
                     Your Message
                   </label>
@@ -137,7 +207,7 @@ const ContactSection = () => {
                     required
                     rows={5}
                     placeholder="Hello! I..."
-                    className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+                    className="w-full px-4 py-3 border rounded-md resize-none border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
 
@@ -153,74 +223,6 @@ const ContactSection = () => {
                   {isSubmitting ? "Sending..." : "Send"} <Send size={20} />
                 </button>
               </form>
-            </div>
-          </div>
-
-          {/* Contact Information */}
-          <div className="space-y-8 flex flex-col items-center md:items-start mx-auto max-w-md px-4 relative z-20">
-            <h3 className="text-2xl font-semibold mb-6 text-white text-center md:text-left">
-              Contact Information
-            </h3>
-            <div className="space-y-6 w-full">
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Mail className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-white">Email</h4>
-                  <a
-                    href="mailto:arafatnayem01@gmail.com"
-                    className="text-gray-300 hover:text-primary transition-colors"
-                  >
-                    arafatnayem01@gmail.com
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Phone className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-white">Phone</h4>
-                  <a
-                    href="tel:+8801516540037"
-                    className="text-gray-300 hover:text-primary transition-colors"
-                  >
-                    +8801516540037
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <MapPin className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-white">Location</h4>
-                  <p className="text-gray-300">Dhaka, Bangladesh</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="pt-8 w-full md:text-left text-center">
-              <h3 className="text-lg font-medium mb-4 text-gray-200">
-                Connect With Me
-              </h3>
-              <div className="flex md:justify-start justify-center space-x-6">
-                {socialLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Visit my ${link.name} profile`}
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
-                  >
-                    {link.icon}
-                  </a>
-                ))}
-              </div>
             </div>
           </div>
         </div>

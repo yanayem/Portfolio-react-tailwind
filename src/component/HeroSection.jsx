@@ -39,7 +39,7 @@ const HeroSection = () => {
         <div className="pt-4 opacity-0 animate-fade-in animate-delay-1000">
           <a
             href="#projects"
-            className="inline-block px-6 py-3 transition-colors duration-300 ease-in-out rounded-md shadow-md bg-primary text-primary-foreground hover:bg-primary-hover"
+            className="inline-block px-6 py-2 transition-colors duration-300 ease-in-out rounded-md shadow-md bg-primary bg-primary-hover"
           >
             View My Projects
           </a>
@@ -48,7 +48,7 @@ const HeroSection = () => {
         {/* Scroll Indicator */}
         <button
           onClick={scrollToFooter}
-          className="absolute flex items-center gap-2 transform -translate-x-1/2 bottom-8 left-1/2 cursor-pointer animate-bounce-slow bg-transparent border-none"
+          className="absolute flex items-center gap-2 transform -translate-x-1/2 bg-transparent border-none cursor-pointer bottom-8 left-1/2 animate-bounce-slow"
           aria-label="Scroll to footer"
         >
           <span className="text-sm md:text-md">Scroll</span>
